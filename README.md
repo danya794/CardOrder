@@ -1,1 +1,1 @@
-# CardOrder [![Build status](https://ci.appveyor.com/api/projects/status/x1ap8qx2v3al8lft?svg=true)](https://ci.appveyor.com/project/danya794/postmanecho)
+# CardOrder [![Build status](https://ci.appveyor.com/api/projects/status/mltfrveh2fimqnjh?svg=true)](https://ci.appveyor.com/project/danya794/cardorder)
