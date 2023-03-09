@@ -15,7 +15,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CardOrderTest {
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
     static void setUpAll() {
