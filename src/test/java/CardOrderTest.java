@@ -20,12 +20,10 @@ public class CardOrderTest {
     @BeforeAll
     static void setUpAll() {
         WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
     }
 
     @BeforeEach
     void setUp() {
-        //driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
@@ -45,27 +43,17 @@ public class CardOrderTest {
     }
 
     @Test
-    void shouldTestV1() {
+    void shouldTestCardOrderSuccess() {
 
         driver.get("http://localhost:9999/");
-        //List<WebElement> inputs = driver.findElements(By.tagName("input"));
-
-        //inputs.get(0).sendKeys("Василий");
-        //inputs.get(1).sendKeys("+79261234455");
-
-        driver.findElements(By.tagName("input")).get(0).sendKeys("Василий");
+        //driver.findElements(By.tagName("input")).get(0).sendKeys("Василий");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Петров-Иванов");
         driver.findElements(By.className("input__control")).get(1).sendKeys("+79261234455");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button__text")).click();
 
-
-        //driver.findElement().sendKeys("Василий");
-        //driver.findElement().sendKeys("+79261234455");
-        //driver.findElement().click();
-        //driver.findElement().click();
-
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-        String actual = driver.findElement(By.tagName("p")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText().trim();
         assertEquals(expected, actual);
     }
 }
