@@ -46,9 +46,8 @@ public class CardOrderTest {
     void shouldTestCardOrderSuccess() {
 
         driver.get("http://localhost:9999/");
-        //driver.findElements(By.tagName("input")).get(0).sendKeys("Василий");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Петров-Иванов");
-        driver.findElements(By.className("input__control")).get(1).sendKeys("+79261234455");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79261234455");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button__text")).click();
 
